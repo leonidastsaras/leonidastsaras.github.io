@@ -1,1 +1,257 @@
-<h1>Hi this is my first github page</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonidas Tsaras</title>
+</head>
+
+<body>
+    <h1>git/github help</h1>
+    <h2>git</h2>
+    <pre>
+The Three States
+1. Modified means that you have changed the file but have not committed it to your database yet.
+2. Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
+3. Committed means that the data is safely stored in your local database.
+
+note: a new file is untracked
+
+//install
+https://git-scm.com/downloads
+
+//update
+git update-git-for-windows
+
+//lets start
+//check if installed
+>git
+>git --version
+
+//move to folder
+>cd C:\github\project
+
+//Create an empty Git repository or reinitialize an existing one
+>git init
+
+//check status
+>git status
+
+//create a file (file1.html) and check status (untracked file)
+
+//to make a file tracked or staged
+>git add file1.html
+>git add *.html
+>git add file*.html
+>git add .
+
+//or for folder
+>git add slider/
+
+
+//to unstage a file
+>git rm --cached file1.html
+
+//to cancel add or unstage
+>git reset about.html
+>git reset (reset all staged files to untracked)
+
+
+//check new status
+>git status
+//your file is modified
+//to discard changes
+//restore file1.html
+
+
+//to restore (git-restore - Restore working tree files)
+>git restore file1.html
+>git restore '*.c'
+>git restore . (To restore all files in the current directory)
+
+
+//to commit (git-commit - Record changes to the repository)
+>git commit -m "revision 0.0.1"
+
+//to Show commit logs (Viewing the Commit History)
+>git log
+
+// to reset (git-reset - Reset current HEAD to the specified state)
+//reset is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation
+changes the commit history.
+//restore is about restoring files in the working tree from either the index or another commit. This command does not
+update your branch.
+
+
+//to create a new folder
+>mkdir newfolder (command line)
+
+//to move a folder (git-mv - Move or rename a file, a directory, or a symlink)
+>mv fromfolder tofolder (command line)
+
+//to move a file to a folder
+>git mv hello.html newfolder
+
+//to remove a file(s) (git-rm - Remove files from the working tree and from the index)
+git rm -f git-*.sh
+
+//to list staged files
+>git ls-files
+>git diff --name-only --cached
+
+
+//to clone a .git
+//git clone [source] [target]
+>git clone c:\github c:\newgit
+
+//to clone a git from github
+>git clone https://github.com/[username]/[repositoryname].git
+>git clone https://github.com/ashleydw/lightbox.git
+
+
+//Pushing commits to a remote repository
+>git push [remote-name] [branch-name]
+>git push origin master
+
+
+//add to remote an existing repository from the command line
+//if remote exists, then-> error: remote origin already exists.
+git remote add origin https://github.com/leonidas-tsaras/php.git
+git branch -M main
+git push -u origin main
+
+//to Fetch from and integrate with another repository or a local branch
+>git pull [<options>] [<repository> [<refspec>…]]
+
+            //Update the remote-tracking branches for the repository you cloned from, then merge one of them into your
+            current branch:
+            >git pull
+            >git pull origin
+
+            //Merge into the current branch the remote branch next:
+            >git pull origin next
+
+
+
+
+            //to set your account's default identity.
+            git config --global user.name leonidas-tsaras
+            git config --global user.email leonidas.tsaras@gmail.com
+
+
+            git config --global user.name leonidastsaras
+            git config --global user.email leonidastsaras@outlook.com
+
+
+            The command git config --list will list the settings. 
+            There you should also find user.name and user.email.
+
+            //local test
+            git config --global user.email "me@test.com"
+            git config --global user.name "me"
+
+            git config --global user.email "you@example.com"
+            git config --global user.name "Your Name"
+
+
+            //to add file/s
+            git add index.html (or)
+            git add .
+
+            //to cancel add
+            git reset
+
+            // to commit
+            git commit -m "revision 0.1"
+
+
+
+            //to create a new repository on the command line
+            echo "#some text" >> README.md
+            git init
+            git add README.md
+            git commit -m "first commit"
+
+
+
+            //To remove a remote repository you enter:
+            git remote rm repositoryname
+
+            //to check remode projects
+            git remote
+
+            git log //shows logs
+
+            git checkout index.html //brings back the previously commited file
+            git checkout 6bb31b0e579393bfbde3f9e03e4590fa09446f3f //brings back all set of files of this commit
+            git checkout master //brings back master
+            git checkout hello //gets as current hello branch. if new, checks out all files from current
+
+            git reset HEAD index.html //unstage file
+
+            git branch //shows current branch
+            git branch hello 6bb31b //renames branch
+            git branch newbranch //creates a new branch named newbranch
+            git branch -m hello app //renames hello branch to app
+            git branch -D app //deletes app branch (or use hash number instead of branch name)
+
+            git merge hello //merges hello to current branch (usually to master)
+
+
+            //to update your current local working branch
+            git pull
+
+
+
+
+            //Fetching and Pulling from Your Remotes
+            git fetch [remote-name]
+            git push origin master
+
+            //Listing Your Tags
+            git tag
+
+
+            //To add a local repository (for example: local_proj) to an existing Git project
+            git remote add local_proj /opt/git/project.git
+
+            git remote
+            git remote show origin //pulls, merges, pushes
+
+            //----------------------------------------------------------------
+
+
+
+            //-----------------------------------------------------------------------
+            //…or push an existing repository from the command line
+
+            >git remote add origin https://github.com/username/projectname.git
+            >git push -u origin master
+            >git push https://github.com/ashleydw/lightbox.git
+            //This repository has been archived by the owner on May 22, 2020. It is now read-only.
+
+
+            //You can see all branches created by using
+            git branch
+
+            //to see what/where remotes are set
+            git remote -v
+            /to delete an origin
+            git remote rm origin
+
+
+            //branching
+            //to create a new branch
+            >git branch [branchname]
+
+            //to list branches
+            >git branch --list
+
+            //to switch to a branch
+            >git switch [branchname]
+    </pre>
+</body>
+
+</html>
