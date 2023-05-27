@@ -11,6 +11,71 @@
 <body>
     <h1>git/github help</h1>
     <h2>git</h2>
+    <section>
+        <h3>Ορισμός ταυτότητας</h3>
+        <p>Για τον ορισμό ταυτότητας εκτελούμε την εντολή:</p>
+<pre>
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+</pre>
+        <p>Για τον έλεγχο του user.name εκτελούμε την εντολή:</p>
+        <pre>git config user.name</pre>
+        <p>Για τον έλεγχο του user.email εκτελούμε την εντολή:</p>
+        <pre>git config user.email</pre>
+    </section>
+
+    <section>
+        <h3>Αρχικοποίηση αποθετηρίου</h3>
+        <p>Για την αρχικοποίηση αποθετηρίου σε υπάρχοντα κατάλογο εκτελούμε την εντολή:</p>
+        <pre>git init</pre>
+    </section>
+
+    <section>
+        <h3>Κλωνοποίηση αποθετηρίου</h3>
+        <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
+        <pre>git clone https://github.com/username/reponame</pre>
+        <div class="notes">
+            <p>Δημιουργείται ο φάκελος reponame</p>
+            <p>Δεν χρειάζεται αρχικοποίηση (δημιουργείται το σχετικό .git)</p>
+        </div>
+        <p>Για κλωνοποίηση αποθετηρίου σε νέο φάκελο: </p>
+        <pre>git clone https://github.com/username/reponame newfolder</pre>
+    </section>
+
+    <section>
+        <h3>Έλεγχος της κατάστασης των αρχείων</h3>
+        <p>Για τον έλεγχο της κατάστασης των αρχείων εκτελούμε:</p>
+        <pre>git status</pre>
+        <p>Για πιο σύντομη περιγραφή:</p>
+        <pre>git status -s</pre>
+    </section>
+
+    <section>
+        <h3>Καταχώρηση τροποποιημένων αρχείων</h3>
+        <p>Για την καταχώρηση αρχείων στο αποθετήριο εκτελούμε την εντολή:</p>
+        <pre>git add home.html</pre>
+        <div class="note">
+            <p>Η καταχώρηση αφορά Modified ή/και Untracked αρχεία.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Υποβολή αλλαγών</h3>
+        <p>Για την υποβολή αλλαγών εκτελούμε την εντολή:</p>
+        <pre>git commit -m "message here"</pre>
+        <div class="note">
+            <p>Πρέπει να προστεθεί σχετικό μήνυμα με την εντολή commit.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Ιστορικό υποβολών</h3>
+        <p>Για την εμφάνιση του ιστορικού υποβολών εκτελούμε την εντολή:</p>
+        <pre>git log</pre>
+    </section>
+
+
+
     <pre>
 The Three States
 1. Modified means that you have changed the file but have not committed it to your database yet.
