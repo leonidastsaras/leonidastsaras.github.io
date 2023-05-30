@@ -31,18 +31,6 @@ $ git config --global user.email johndoe@example.com
     </section>
 
     <section>
-        <h3>Κλωνοποίηση αποθετηρίου</h3>
-        <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
-        <pre>git clone https://github.com/username/reponame</pre>
-        <div class="notes">
-            <p>Δημιουργείται ο φάκελος reponame</p>
-            <p>Δεν χρειάζεται αρχικοποίηση (δημιουργείται το σχετικό .git)</p>
-        </div>
-        <p>Για κλωνοποίηση αποθετηρίου σε νέο φάκελο: </p>
-        <pre>git clone https://github.com/username/reponame newfolder</pre>
-    </section>
-
-    <section>
         <h3>Έλεγχος της κατάστασης των αρχείων</h3>
         <p>Για τον έλεγχο της κατάστασης των αρχείων εκτελούμε:</p>
         <pre>git status</pre>
@@ -57,6 +45,9 @@ $ git config --global user.email johndoe@example.com
         <div class="note">
             <p>Η καταχώρηση αφορά Modified ή/και Untracked αρχεία.</p>
         </div>
+        <p>Για ταυτόχρονη καταχώρηση πολλών αρχείων (new, modified, και deleted):</p>
+        <pre>git add --all</pre>
+
     </section>
 
     <section>
@@ -74,6 +65,23 @@ $ git config --global user.email johndoe@example.com
         <pre>git log</pre>
     </section>
 
+    <section>
+        <h3>Κλωνοποίηση αποθετηρίου</h3>
+        <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
+        <pre>git clone https://github.com/username/reponame</pre>
+        <div class="notes">
+            <p>Δημιουργείται ο φάκελος reponame</p>
+            <p>Δεν χρειάζεται αρχικοποίηση (δημιουργείται το σχετικό .git)</p>
+        </div>
+        <p>Για κλωνοποίηση αποθετηρίου σε νέο φάκελο: </p>
+        <pre>git clone https://github.com/username/reponame newfolder</pre>
+    </section>
+
+    <section>
+        <h3>Ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο</h3>
+        <p>Για την ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο εκτελούμε την εντολή:</p>
+        <pre>git pull</pre>
+    </section>
 
 
     <pre>
@@ -263,13 +271,6 @@ git push -u origin main
             git branch -D app //deletes app branch (or use hash number instead of branch name)
 
             git merge hello //merges hello to current branch (usually to master)
-
-
-            //to update your current local working branch
-            git pull
-
-
-
 
             //Fetching and Pulling from Your Remotes
             git fetch [remote-name]
