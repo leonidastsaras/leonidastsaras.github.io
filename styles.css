@@ -15,8 +15,18 @@ body {
   font-weight: 300;
 }
 
+p {
+  line-height: 130%;
+  margin: 1rem 0 0.5rem;
+}
+
+h1, h2, h3 {
+  margin: 1rem 0 0.5rem;
+}
+
 div#wrapper {
   width: 100%;
   max-width: var(--maxPageWidth);
   margin:auto;
 }
+
