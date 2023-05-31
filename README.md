@@ -1,2 +1,2 @@
 # leonidastsaras.github.io
-this is my github page
+this is my github page displaying git commands
