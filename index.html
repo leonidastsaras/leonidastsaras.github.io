@@ -15,15 +15,45 @@
     <h2>git</h2>
     <section>
         <h3>Ορισμός ταυτότητας</h3>
-        <p>Για τον ορισμό ταυτότητας εκτελούμε την εντολή:</p>
+        <p>Για τον ορισμό (global) ταυτότητας εκτελούμε την εντολή:</p>
 <pre>
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 </pre>
-        <p>Για τον έλεγχο του user.name εκτελούμε την εντολή:</p>
-        <pre>git config user.name</pre>
-        <p>Για τον έλεγχο του user.email εκτελούμε την εντολή:</p>
-        <pre>git config user.email</pre>
+        <p>Για τον έλεγχο του (global) user.name εκτελούμε την εντολή:</p>
+        <pre>git config --global user.name</pre>
+        <p>Για τον έλεγχο του (global) user.email εκτελούμε την εντολή:</p>
+        <pre>git config --global user.email</pre>
+        <p>Για τη διαγραφή του global user.name και user.email</p>
+<pre>
+$ git config --global --unset user.name
+$ git config --global --unset user.email
+</pre>
+        <p>ή</p>
+<pre>
+$ git config --global --unset-all user.name
+$ git config --global --unset-all user.email
+</pre>
+
+        <p>Για τη διαγραφή του global user από τα Windows, επιλέξτε Credential Manager και διαγράψτε την εγγραφή από τα Generic Credentials. Σημείωση: Αναζητήστε "Credentials".</p>
+
+        <p>Αντίστοιχα για (local) user.name και user.email οι ενολές είναι:</p>
+<pre>
+$ git config user.name "John Doe"
+$ git config user.email johndoe@example.com
+</pre>
+
+<pre>
+$ git config user.name
+$ git config user.email
+</pre>
+
+<pre>
+$ git config --unset-all user.name
+$ git config --unset-all user.email
+</pre>
+
+
     </section>
 
     <section>
