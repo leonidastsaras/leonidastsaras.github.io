@@ -10,113 +10,161 @@
 </head>
 
 <body>
-<div id = "wrapper">
-    <h1>git/github help</h1>
-    <h2>git</h2>
-    <section>
-        <h3>Ορισμός ταυτότητας</h3>
-        <p>Για τον ορισμό ταυτότητας εκτελούμε την εντολή:</p>
+    <div id="wrapper">
+        <h1>git/github help</h1>
+        <h2>git</h2>
+        <section>
+            <h3>Ορισμός ταυτότητας</h3>
+            <p>Για τον ορισμό (global) ταυτότητας εκτελούμε την εντολή:</p>
 <pre>
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 </pre>
-        <p>Για τον έλεγχο του user.name εκτελούμε την εντολή:</p>
-        <pre>git config user.name</pre>
-        <p>Για τον έλεγχο του user.email εκτελούμε την εντολή:</p>
-        <pre>git config user.email</pre>
-    </section>
+            <p>Για τον έλεγχο του (global) user.name εκτελούμε την εντολή:</p>
+            <pre>git config --global user.name</pre>
+            <p>Για τον έλεγχο του (global) user.email εκτελούμε την εντολή:</p>
+            <pre>git config --global user.email</pre>
+            <p>Για τη διαγραφή του global user.name και user.email</p>
+<pre>
+git config --global --unset user.name
+git config --global --unset user.email
+</pre>
+            <p>ή</p>
+<pre>
+git config --global --unset-all user.name
+git config --global --unset-all user.email
+</pre>
 
-    <section>
-        <h3>Αρχικοποίηση αποθετηρίου</h3>
-        <p>Για την αρχικοποίηση αποθετηρίου σε υπάρχοντα κατάλογο εκτελούμε την εντολή:</p>
-        <pre>git init</pre>
-    </section>
+            <p>Για τη διαγραφή του global user από τα Windows, επιλέξτε Credential Manager και διαγράψτε την εγγραφή από
+                τα Generic Credentials. Σημείωση: Αναζητήστε "Credentials".</p>
 
-    <section>
-        <h3>Έλεγχος της κατάστασης των αρχείων</h3>
-        <p>Για τον έλεγχο της κατάστασης των αρχείων εκτελούμε:</p>
-        <pre>git status</pre>
-        <p>Για πιο σύντομη περιγραφή:</p>
-        <pre>git status -s</pre>
-    </section>
+            <p>Αντίστοιχα για (local) user.name και user.email οι εντολές είναι:</p>
+<pre>
+git config user.name "John Doe"
+git config user.email johndoe@example.com
+</pre>
 
-    <section>
-        <h3>Καταχώρηση τροποποιημένων αρχείων</h3>
-        <p>Για την καταχώρηση αρχείων στο αποθετήριο εκτελούμε την εντολή:</p>
-        <pre>git add home.html</pre>
-        <div class="note">
-            <p>Η καταχώρηση αφορά Modified ή/και Untracked αρχεία.</p>
-        </div>
-        <p>Για ταυτόχρονη καταχώρηση πολλών αρχείων (new, modified, και deleted):</p>
-        <pre>git add --all</pre>
+<pre>
+git config user.name
+git config user.email
+</pre>
 
-    </section>
+<pre>
+git config --unset-all user.name
+git config --unset-all user.email
+</pre>
+        </section>
 
-    <section>
-        <h3>Υποβολή αλλαγών</h3>
-        <p>Για την υποβολή αλλαγών εκτελούμε την εντολή:</p>
-        <pre>git commit -m "message here"</pre>
-        <div class="note">
-            <p>Πρέπει να προστεθεί σχετικό μήνυμα με την εντολή commit.</p>
-        </div>
-    </section>
+        <section>
+            <h3>Αρχικοποίηση αποθετηρίου</h3>
+            <p>Για την αρχικοποίηση αποθετηρίου σε υπάρχοντα κατάλογο εκτελούμε την εντολή:</p>
+            <pre>git init</pre>
+        </section>
 
-    <section>
-        <h3>Ιστορικό υποβολών</h3>
-        <p>Για την εμφάνιση του ιστορικού υποβολών εκτελούμε την εντολή:</p>
-        <pre>git log</pre>
-    </section>
+        <section>
+            <h3> Έλεγχος των ρυθμίσεών μας</h3>
+            <p>Για έλεγχο ρυθμίσεων, εκτελούμε την εντολή:</p>
+            <pre>git config --list</pre>
+            <p>Επίσης για έλεγχο user.name ή user.email</p>
+            <pre>git config user.name</pre>
+            <pre>git config user.email</pre>
+        </section>
 
-    <section>
-        <h3>Κλωνοποίηση αποθετηρίου</h3>
-        <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
-        <pre>git clone https://github.com/username/reponame</pre>
-        <div class="notes">
-            <p>Δημιουργείται ο φάκελος reponame</p>
-            <p>Δεν χρειάζεται αρχικοποίηση (δημιουργείται το σχετικό .git)</p>
-        </div>
-        <p>Για κλωνοποίηση αποθετηρίου σε νέο φάκελο: </p>
-        <pre>git clone https://github.com/username/reponame newfolder</pre>
-    </section>
+        <section>
+            <h3>Έλεγχος της κατάστασης των αρχείων</h3>
+            <p>Για τον έλεγχο της κατάστασης των αρχείων εκτελούμε:</p>
+            <pre>git status</pre>
+            <p>Για πιο σύντομη περιγραφή:</p>
+            <pre>git status -s</pre>
+        </section>
 
-    <section>
-        <h3>Ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο</h3>
-        <p>Για την ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο εκτελούμε την εντολή:</p>
-        <pre>git pull</pre>
-        <div class="notes">
-            <p>Η pull είναι συνδυασμός των fetch και merge</p>
-        </div>
-    </section>
+        <section>
+            <h3>Καταχώρηση τροποποιημένων αρχείων</h3>
+            <p>Για την καταχώρηση αρχείων στο αποθετήριο εκτελούμε την εντολή:</p>
+            <pre>git add home.html</pre>
+            <div class="note">
+                <p>Η καταχώρηση αφορά Modified ή/και Untracked αρχεία.</p>
+            </div>
+            <p>Για ταυτόχρονη καταχώρηση πολλών αρχείων (new, modified, και deleted):</p>
+            <pre>git add --all</pre>
 
-    <section>
-        <h3>Ώθηση δεδομένων σε απομακρυσμένα αποθετήρια</h3>
-        <p>Όταν έχουμε κάποιο έργο στο οποίο έχουμε κάνει αλλαγές και το έχουμε φτάσει σε σημείο που θέλουμε να το κοινοποιήσουμε,
-        θα πρέπει να το ωθήσουμε και εκτελούμε την εντολή:</p>
-        <pre>git push</pre>
-        <div class="notes">
-            <p>Η εντολή αυτή θα εκτελεστεί επιτυχώς μόνο αν έχουμε κλωνοποιήσει από έναν διακομιστή στον οποίο έχουμε δικαιώματα
-            εγγραφής δεδομένων και αν κανείς άλλος δεν έχει ωθήσει δεδομένα στο μεσοδιάστημα</p>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h3>Branches</h3>
-        <p>Για την εμφάνιση των branches εκτελούμε την εντολή:</p>
-        <pre>git branch</pre>
-        <p>ή</p>
-        <pre>git branch --list</pre>
-        <p>Για την δημιουργία ενός νέου branche, έστω test, εκτελούμε την εντολή:</p>
-        <pre>git branch test</pre>
-        <p>Για αλλαγή σε άλλο branche, έστω test, εκτελούμε την εντολή:</p>
-        <pre>git switch test</pre>
-        <pre>git checkout test</pre>
-        <p>Για μετονομασία ενός branche από έστω test σε tester, εκτελούμε την εντολή:</p>
-        <pre>git branch -m test tester</pre>
-        <p>Για τη διαγραφή ενός branche από έστω test, εκτελούμε την εντολή:</p>
-        <pre>git branch -D test</pre>
-        <p>Για το merge ενός branche έστω test στο main, αλλάζουμε στο main και εκτελούμε την εντολή:</p>
-        <pre>git merge test</pre>
-    </section>
-</div>
+        <section>
+            <h3>Υποβολή αλλαγών</h3>
+            <p>Για την υποβολή αλλαγών εκτελούμε την εντολή:</p>
+            <pre>git commit -m "message here"</pre>
+            <div class="note">
+                <p>Πρέπει να προστεθεί σχετικό μήνυμα με την εντολή commit.</p>
+                <p>Πρέπει επίσης να έχει δηλωθεί user.name και user.email</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Ιστορικό υποβολών</h3>
+            <p>Για την εμφάνιση του ιστορικού υποβολών εκτελούμε την εντολή:</p>
+            <pre>git log</pre>
+        </section>
+
+        <section>
+            <h3>Αναιρώντας κάτι στην υποβολή</h3>
+            <p>Αν θέλουμε να ξανακάνουμε τη συγκεκριμένη υποβολή, να προσθέσουμε τις αλλαγές που ξεχάσαμε, να τις βάλουμε στο στάδιο καταχώρισης και να τις ξαναϋποβάλλουμε, εκτελούμε την εντολή:</p>
+            <pre>git commit --amend</pre>
+        </section>
+
+        <section>
+            <h3>Κλωνοποίηση αποθετηρίου</h3>
+            <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
+            <pre>git clone https://github.com/username/reponame</pre>
+            <div class="notes">
+                <p>Δημιουργείται ο φάκελος reponame</p>
+                <p>Δεν χρειάζεται αρχικοποίηση (δημιουργείται το σχετικό .git)</p>
+            </div>
+            <p>Για κλωνοποίηση αποθετηρίου σε νέο φάκελο: </p>
+            <pre>git clone https://github.com/username/reponame newfolder</pre>
+        </section>
+
+        <section>
+            <h3>Ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο</h3>
+            <p>Για την ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο εκτελούμε την εντολή:</p>
+            <pre>git pull</pre>
+            <div class="notes">
+                <p>Η pull είναι συνδυασμός των fetch και merge</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Ώθηση δεδομένων σε απομακρυσμένα αποθετήρια</h3>
+            <p>Όταν έχουμε κάποιο έργο στο οποίο έχουμε κάνει αλλαγές και το έχουμε φτάσει σε σημείο που θέλουμε να το
+                κοινοποιήσουμε,
+                θα πρέπει να το ωθήσουμε και εκτελούμε την εντολή:</p>
+            <pre>git push</pre>
+            <div class="notes">
+                <p>Η εντολή αυτή θα εκτελεστεί επιτυχώς μόνο αν έχουμε κλωνοποιήσει από έναν διακομιστή στον οποίο
+                    έχουμε δικαιώματα
+                    εγγραφής δεδομένων και αν κανείς άλλος δεν έχει ωθήσει δεδομένα στο μεσοδιάστημα</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Branches</h3>
+            <p>Για την εμφάνιση των branches εκτελούμε την εντολή:</p>
+            <pre>git branch</pre>
+            <p>ή</p>
+            <pre>git branch --list</pre>
+            <p>Για την δημιουργία ενός νέου branche, έστω test, εκτελούμε την εντολή:</p>
+            <pre>git branch test</pre>
+            <p>Για αλλαγή σε άλλο branche, έστω test, εκτελούμε την εντολή:</p>
+            <pre>git switch test</pre>
+            <pre>git checkout test</pre>
+            <p>Για μετονομασία ενός branche από έστω test σε tester, εκτελούμε την εντολή:</p>
+            <pre>git branch -m test tester</pre>
+            <p>Για τη διαγραφή ενός branche από έστω test, εκτελούμε την εντολή:</p>
+            <pre>git branch -D test</pre>
+            <p>Για το merge ενός branche έστω test στο main, αλλάζουμε στο main και εκτελούμε την εντολή:</p>
+            <pre>git merge test</pre>
+        </section>
+    </div>
 </body>
+
 </html>
