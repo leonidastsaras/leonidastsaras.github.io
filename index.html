@@ -56,7 +56,7 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Αρχικοποίηση αποθετηρίου</h3>
+            <h3>Αρχικοποίηση αποθετηρίου (init)</h3>
             <p>Για την αρχικοποίηση αποθετηρίου σε υπάρχοντα κατάλογο εκτελούμε την εντολή:</p>
             <pre>git init</pre>
         </section>
@@ -71,12 +71,23 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Έλεγχος της κατάστασης των αρχείων</h3>
+            <h3>Έλεγχος της κατάστασης των αρχείων (status)</h3>
             <p>Για τον έλεγχο της κατάστασης των αρχείων εκτελούμε:</p>
             <pre>git status</pre>
             <p>Για πιο σύντομη περιγραφή:</p>
             <pre>git status -s</pre>
         </section>
+
+        <section>
+            <h3>Λίστα αρχείων (ls-files)</h3>
+            <p>Για εμφάνιση λίστας αρχείων εκτελούμε:</p>
+            <pre>git ls-files</pre>
+            <p>Για εμφάνιση λίστας αρχείων staged εκτελούμε:</p>
+            <pre>git ls-files --stage</pre>
+            <p>ή πιο σύντομα:</p>
+            <pre>git ls-files -s</pre>
+            <p>Για περισσότερες επιλογές: <a href="https://git-scm.com/docs/git-ls-files">https://git-scm.com/docs/git-ls-files</a></p>
+        </section>        
 
         <section>
             <h3>Καταχώρηση τροποποιημένων αρχείων</h3>
@@ -91,7 +102,7 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Υποβολή αλλαγών</h3>
+            <h3>Υποβολή αλλαγών (commit)</h3>
             <p>Για την υποβολή αλλαγών εκτελούμε την εντολή:</p>
             <pre>git commit -m "message here"</pre>
             <div class="note">
@@ -101,9 +112,11 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Ιστορικό υποβολών</h3>
+            <h3>Ιστορικό υποβολών (log)</h3>
             <p>Για την εμφάνιση του ιστορικού υποβολών εκτελούμε την εντολή:</p>
             <pre>git log</pre>
+            <p>Για την εμφάνιση τελευταίων υποβολών έστω 3, εκτελούμε την εντολή:</p>
+            <pre>git log -3</pre>
         </section>
 
         <section>
@@ -113,7 +126,7 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Κλωνοποίηση αποθετηρίου</h3>
+            <h3>Κλωνοποίηση αποθετηρίου (clone)</h3>
             <p>Για την κλωνοποίηση αποθετηρίου εκτελούμε την εντολή:</p>
             <pre>git clone https://github.com/username/reponame</pre>
             <div class="notes">
@@ -125,7 +138,7 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο</h3>
+            <h3>Ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο (pull)</h3>
             <p>Για την ενημέρωση τοπικού αποθετηρίου από απομακρυσμένο εκτελούμε την εντολή:</p>
             <pre>git pull</pre>
             <div class="notes">
@@ -134,7 +147,7 @@ git config --unset-all user.email
         </section>
 
         <section>
-            <h3>Ώθηση δεδομένων σε απομακρυσμένα αποθετήρια</h3>
+            <h3>Ώθηση δεδομένων σε απομακρυσμένα αποθετήρια (push)</h3>
             <p>Όταν έχουμε κάποιο έργο στο οποίο έχουμε κάνει αλλαγές και το έχουμε φτάσει σε σημείο που θέλουμε να το
                 κοινοποιήσουμε,
                 θα πρέπει να το ωθήσουμε και εκτελούμε την εντολή:</p>
