@@ -109,6 +109,14 @@ git config --unset-all user.email
                 <p>Πρέπει να προστεθεί σχετικό μήνυμα με την εντολή commit.</p>
                 <p>Πρέπει επίσης να έχει δηλωθεί user.name και user.email</p>
             </div>
+
+            <h3>Υποβολή αλλαγών (commit) με amend</h3>
+            <p>Σε ένα πρόσφατο commit και αφού έχετε κάνει κάποιες μικροαλλαγές μπορείτε να κάνετε:</p>
+            <pre>git commit --amend</pre>
+            <p>Έτσι, δεν δημιουργείτε ένα νέο commit αλλά προσθέτε κάτι ακόμα στο τελευταίο</p>
+            <p>Μπορείτε να προσθέσετε νέο μήνυμα ή:</p>
+            <pre>git commit --amend --no-edit</pre>
+            <p>για να κρατήσετε το υπάρχον.</p>
         </section>
 
         <section>
@@ -156,6 +164,32 @@ git config --unset-all user.email
                 <p>Η εντολή αυτή θα εκτελεστεί επιτυχώς μόνο αν έχουμε κλωνοποιήσει από έναν διακομιστή στον οποίο
                     έχουμε δικαιώματα
                     εγγραφής δεδομένων και αν κανείς άλλος δεν έχει ωθήσει δεδομένα στο μεσοδιάστημα</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Δημιουργία νέου αποθετηρίου για ώθηση νέου git</h3>
+            <p>Αν έχουμε δημιουργήσει ένα νέο git και θέλουμε να το ανεβάσουμε στο github σε ένα νέο repo, πρέπει:</p>
+            <ul>
+                <li>να δημιουργήσουμε στο github νέο αποθετήριο</li>
+                <li>να εκτελέσουμε τις παρακάτω εντολές:
+<pre>
+git remote add origin https://github.com/user-name/repo-name.git
+git branch -M main
+git push -u origin main                        
+</pre>
+<p>όπου <i>user-name</i> και <i>repo-name</i> θα αντικατασταθούν από τις αντίστοιχες τιμές.</p>
+                </li>
+            </ul>
+
+            <div class="notes">
+                <p>Θα πρέπει να έχουν προηγηθεί οι εντολές:</p>
+<pre>
+git init
+git add README.md
+git commit -m "some message"
+</pre>
+<p>όταν πρόκειται για ένα νέο project</p>
             </div>
         </section>
 
